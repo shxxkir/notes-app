@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 import Form from '@/components/Form';
@@ -72,18 +72,15 @@ const EditNote = () => {
   }
 
   return (
-    <Suspense>
-      <Form
-        type='Update'
-        note={note}
-        setNote={setNote}
-        errors={errors}
-        submitting={submitting}
-        handleSubmit={updateNote}
-      />    
-    </Suspense>
+    <Form
+      type='Update'
+      note={note}
+      setNote={setNote}
+      errors={errors}
+      submitting={submitting}
+      handleSubmit={updateNote}
+    />    
   )
-    
 }
 
 export default EditNote
